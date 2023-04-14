@@ -11,8 +11,7 @@
       <ul class="list-group" *ngFor="let item of listTareas; let i = index">
         <li class="list-group-item p-3 pocision">
           <span class="cursor" (click)="editarTarea(item,i)">
-            <i class="bi bi-check-circle-fill text-success" *ngIf="item.estado == true"></i>
-            <i class="bi bi-circle" *ngIf="item.estado == false"></i>
+            <i  [ngClass]="item.estado ? 'bi bi-check-circle-fill text-success' : 'bi bi-circle'"></i>
           </span>
           <span> {{item.nombre}}</span>
           <span class="cursor text-danger" (click)="eliminarTarea(i)">
