@@ -1,0 +1,17 @@
+input{
+    text-align: center;
+}
+
+.form-control-lg{
+    font-size: 1.8rem;
+}
+
+.pocision{
+    display: flex;
+    justify-content: space-between;
+}
+
+.pocision span:first-child,
+.pocision .trash {
+    cursor: pointer;
+}
