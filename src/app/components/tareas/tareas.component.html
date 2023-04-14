@@ -8,18 +8,18 @@
       <div class="card pt-2" *ngIf="listTareas.length === 0">
         <h6 class="text-center text-danger">No Hay Tareas para mostrar</h6>
       </div>
-      <ul class="list-group" *ngFor="let item of listTareas">
+      <ul class="list-group" *ngFor="let item of listTareas; let i = index">
         <li class="list-group-item p-3 pocision">
-         <span>
-          <i class="fa-regular fa-circle"></i>
-        </span>
-         <span> {{item.nombre}}</span>
-         <span class="trash">
-          <i class="fa-solid fa-trash p-2"></i>
-         </span>
+          <span class="cursor" (click)="editarTarea(item,i)">
+            <i class="fa-solid fa-circle-check text-success" *ngIf="item.estado == true"></i>
+            <i class="fa-regular fa-circle" *ngIf="item.estado == false"></i>
+          </span>
+          <span> {{item.nombre}}</span>
+          <span class="cursor text-danger" (click)="eliminarTarea(i)">
+            <i class="fa-solid fa-trash"></i>
+          </span>
         </li>
       </ul>
-
     </div>
   </div>
 </div>

@@ -13,8 +13,6 @@ export class TareasComponent {
    nombreTarea = '';
 
   AgregarTarea(){
-
-  console.log(this.nombreTarea);
    const tarea:Tarea = {
     nombre:this.nombreTarea,
     estado:false
@@ -24,4 +22,11 @@ export class TareasComponent {
    this.nombreTarea = '';
   }
   
+  eliminarTarea(index:number) : void{
+   this.listTareas.splice(index,1);
+  }
+
+  editarTarea(tarea:Tarea, index:number):void{
+    this.listTareas[index].estado = !tarea.estado;
+  }
 }

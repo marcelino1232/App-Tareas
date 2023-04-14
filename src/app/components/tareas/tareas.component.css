@@ -11,7 +11,7 @@ input{
     justify-content: space-between;
 }
 
-.pocision span:first-child,
-.pocision .trash {
+
+.cursor {
     cursor: pointer;
 }
